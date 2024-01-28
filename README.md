@@ -1,8 +1,35 @@
 # Tauri + Unison
 
-This template should help get you started developing with Tauri and
+This template may help get you started developing with Tauri and
 Unison. This example has been built assuming the use of the
 [tv](https://share.unison-lang.org/@dfreeman/tv) library.
+
+
+## Licensing and attribution
+
+The bundled example is from [@dreeman's tvGuide](https://share.unison-lang.org/@dfreeman/tvGuide).
+
+This example is licensed under the
+[CC0](https://creativecommons.org/public-domain/cc0/) - this places this work
+as fully as possible into the public domain. Tauri and Unison are covered by
+their own licenses. If you fork this code, you should modify the license and
+authorship information as you like.
+
+
+## How it works
+
+[Tauri](https://tauri.app/) is a toolkit that lets developers package web-based software as a
+native-looking application. If you're familiar with Electron, it's similar to
+that.
+
+[Unison](https://www.unison-lang.org/) is a programming language with a whole bunch of cool ideas.
+
+This project bundles a copy of the `ucm` Unison executable/runtime along with
+`main.uc`, which is copy of the compiled Unison code. When the user launches
+your app, in the background we boot up the Unison-based server, wait for it to
+to be ready, and then display a web view. We connect over port 8080 (hard-coded).
+
+TODO: Can we connect over a local socket, or at least dynamically choose an open port?
 
 ## Developing
 
@@ -23,14 +50,21 @@ It's pretty manual right now.
 
 To make changes to your app, close the window, and repeat steps 2-5.
 
-### Refining
+You may want to use [hotswap](https://share.unison-lang.org/@dfreeman/hotswap),
+which gives a lower-friction development loop here.
+
+TODO: Improve automation here - possibly by expanding the build.rs script.
+
+### Refining your app
 
 Consult the [Tauri docs](https://tauri.app/v1/guides/features/) for how to
 customize the icons, change default window size, and more.
 
-### Publishing
+### Publishing your app
 
 To publish for your current platform, run `cargo tauri build`.
+
+TODO: Set up Github Actions to buid for other platforms.
 
 ### Recommended IDE Setup
 
