@@ -62,6 +62,14 @@
         "resizable": true,
         "title": "tauri-unison-demo",
         "width": 800,
+        "height": 600,
+        "visible": false
+      },
+      {
+        "url": "splashscreen.html",
+        "decorations": false,
+        "label": "splashscreen",
+        "width": 800,
         "height": 600
       }
     ]

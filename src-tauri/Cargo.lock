@@ -3119,6 +3119,7 @@ dependencies = [
  "tauri-build",
  "tauri-plugin-websocket",
  "tokio",
+ "url",
 ]
 
 [[package]]
