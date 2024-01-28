@@ -3,19 +3,60 @@
 <head>
 <style>
 html, body {
+  width: 100%;
   height: 100%;
 }
 body{
   margin:0 auto;
+  font-family: "Helvetica", sans-serif;
+  color: #303;
 }
-body p img {
+div.center {
+  text-align: center;
+  margin: 20%;
+  min-height: 10em;
+  background-color: rgba(255, 255, 255, .25);  
+  border-radius: 1em;
+  position: relative;
+
+}
+p img {
   display: inline-block;
   height: 1em;
   width: auto;
 }
+div.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+    overflow: hidden;
+    background: linear-gradient(-45deg, #c55, #35a,  #6d8, #cc3);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 </style>
 </head>
 <body>
-  <h1> Tauri-Unison demo </h1>
-  <p> Powered by Unison <img src="assets/unison.svg"/> </p>
+  <div class="center">
+    <div class="inner">
+      <h1> Tauri-Unison demo </h1>
+      <p> Powered by Unison <img src="assets/unison.svg"/> </p>
+    </div>
+  </div>
 </body>
