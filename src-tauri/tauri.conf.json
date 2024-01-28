@@ -12,22 +12,45 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "fs": {
+        "all": true,
+        "scope": ["*", "$RESOURCE/*"]
+      },
+      "path": {
+        "all": true
+      },
       "shell": {
-        "all": false,
-        "open": true
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "binaries/ucm",
+            "sidecar": true,
+            "args": [
+              "run.compiled",
+              {
+                "validator": "resources/\\S+"
+              }
+            ]
+          }
+        ]
       }
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "dev.fwip.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
+      ],
+      "externalBin": [
+        "binaries/ucm"
+      ],
+      "resources": [
+        "resources/*"
       ]
     },
     "security": {
