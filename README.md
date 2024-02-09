@@ -40,7 +40,18 @@ TODO: Can we connect over a local socket, or at least dynamically choose an open
 
 ### Workflow
 
-It's pretty manual right now.
+Run `cargo tauri dev` to build and bring up your application in Tauri. You can
+change the fields in `Cargo.toml` under `package.metadata.unison_tauri` to
+point to the project you want to use, adjust the UCM version, etc.
+
+Currently, this isn't well set up for interactive development - I'd recommend using
+[hotswap](https://share.unison-lang.org/@dfreeman/hotswap) until you get your
+app behaving as expected, and then work on the Tauri bundling.
+
+
+#### Old Workflow
+
+If the above doesn't work for you, here's the manual process:
 
 1. Copy your version of UCM to `src-tauri/binaries/ucm-TARGET`, where `TARGET` is a rust target triple for your platform, like `aarch64-apple-darwin`. You can find this by running `rustc -vV` and looking for the `host:` field.
 2. From inside UCM, develop your TV app as normal.
@@ -64,7 +75,7 @@ customize the icons, change default window size, and more.
 
 To publish for your current platform, run `cargo tauri build`.
 
-TODO: Set up Github Actions to buid for other platforms.
+TODO: Set up Github Actions to build for other platforms.
 
 ### Recommended IDE Setup
 
